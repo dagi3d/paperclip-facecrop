@@ -1,7 +1,7 @@
 Paperclip::FaceCrop
 ====================
 Paperclip::FaceCrop is a [Paperclip][paperclip] processor that is aware of the faces found on the image 
-so that they aren't cropped or are shown too small while generating the thumbnails.
+so that they aren't cropped or aren't shown too small while generating the thumbnails.
 
 ![](https://github.com/dagi3d/paperclip-facecrop/raw/master/README_example.jpg)
 
@@ -13,12 +13,14 @@ Requirements:
 Installation:
 -------------
 - Copy `paperclip/facecrop.rb` into your `lib` directory
-- Write an initializer setting the path of the haarcascade filters(`initializers/paperclip.rb` for example):  
+- Write an initializer setting the path of the haarcascade filters(`initializers/paperclip.rb` for example):   
+
+
+
+          require 'paperclip/facecrop'
+          Paperclip::FaceCrop.classifiers = ["/usr/local/share/opencv/haarcascades/haarcascade_frontalface_alt_tree.xml"]
     
-    require 'paperclip/facecrop'
-    Paperclip::FaceCrop.classifiers = ["/usr/local/share/opencv/haarcascades/haarcascade_frontalface_alt_tree.xml"]
-    
-You can use more than one filter if you want in order to try more accurate searches
+You can use more than one filter if you want in order to try more accurate searches.
 
 Usage:
 ------
@@ -31,7 +33,7 @@ Just specify your image styles as usual and set :face_crop as the processor:
           :processors => [:face_crop]
     end
     
-In case no faces were found, it will behave just as the Paperclip::Thumbnail processor
+In case no faces were found, it will behave simply as the `Paperclip::Thumbnail` processor
 
 Credits:
 --------
