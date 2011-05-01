@@ -5,7 +5,6 @@ class Paperclip::FaceCrop < Paperclip::Thumbnail
   def initialize(file, options = {}, attachment = nil)
     super(file, options, attachment)
     
-    
     x_coords = []
     y_coords = []
     widths   = []
@@ -86,11 +85,9 @@ class Paperclip::FaceCrop < Paperclip::Thumbnail
   def transformation_command
     return super unless @has_faces
     
-    #raise "#{@current_geometry}-#{@target_geometry}"
     scale, crop = @current_geometry.transformation_to(@target_geometry, crop?)
     faces_crop = "%dx%d+%d+%d" % [@faces_width, @faces_height, @top_left_x, @top_left_y]
     
-    #raise @current_geometry.to_s
     trans = []
     trans << "-crop" << %["#{faces_crop}"] << "+repage"
     trans << "-resize" << %["#{scale}"] unless scale.nil? || scale.empty?

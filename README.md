@@ -1,6 +1,6 @@
 Paperclip::FaceCrop
 ====================
-Paperclip::FaceCrop is a [Paperclip][paperclip] processor that is aware of the faces found on the image 
+`Paperclip::FaceCrop` is a [Paperclip][paperclip] processor that is aware of the faces found on the image 
 so that they aren't cropped or aren't shown too small while generating the thumbnails.
 It uses OpenCV for the facial recognition
 
