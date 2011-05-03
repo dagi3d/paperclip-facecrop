@@ -13,11 +13,7 @@ Requirements:
 
 Installation:
 -------------
-- Install the gem
-          
-          `gem install paperclip-facecrop'`
-          
-- Add to `Gemfile`
+- Add to your application `Gemfile`
 
           gem 'paperclip-facecrop'
 
