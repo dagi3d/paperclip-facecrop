@@ -13,13 +13,16 @@ Requirements:
 
 Installation:
 -------------
+- Install the gem
+          
+          `gem install paperclip-facecrop'`
+          
 - Add to `Gemfile`
 
-          gem 'opencv'
-- Copy `paperclip/facecrop.rb` into your `lib` directory
+          gem 'paperclip-facecrop'
+
 - Write an initializer setting the path of the haarcascade filters(`initializers/paperclip.rb` for example):   
 
-          require 'paperclip/facecrop'
           Paperclip::FaceCrop.classifiers = ["/usr/local/share/opencv/haarcascades/haarcascade_frontalface_alt_tree.xml"]
     
 You can use more than one filter if you want in order to try more accurate searches.

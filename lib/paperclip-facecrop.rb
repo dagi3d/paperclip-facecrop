@@ -1,3 +1,5 @@
+require 'opencv'
+
 class Paperclip::FaceCrop < Paperclip::Thumbnail
   
   cattr_accessor :classifiers
@@ -9,6 +11,8 @@ class Paperclip::FaceCrop < Paperclip::Thumbnail
     y_coords = []
     widths   = []
     heights  = []
+    
+    raise "No classifiers were defined" if Paperclip::FaceCrop.classifiers.nil?
     
     image = OpenCV::IplImage.load(file.path)
     
