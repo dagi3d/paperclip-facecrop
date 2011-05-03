@@ -16,6 +16,9 @@ Installation:
 - Add to your application `Gemfile`
 
           gem 'paperclip-facecrop'
+          
+- Type
+          bundle install
 
 - Write an initializer setting the path of the haarcascade filters(`initializers/paperclip.rb` for example):   
 
