@@ -23,9 +23,37 @@ Installation:
 
 - Write an initializer setting the path of the haarcascade filters(`initializers/paperclip.rb` for example):   
 
-          Paperclip::FaceCrop.classifiers = ["/usr/local/share/opencv/haarcascades/haarcascade_frontalface_alt_tree.xml"]
+          Paperclip::FaceCrop.classifiers = {
+            :face => ["/usr/local/share/opencv/haarcascades/haarcascade_frontalface_alt.xml"]
+          }
+              
+    You can use more than one filter to try more accurate searches:
     
-You can use more than one filter if you want in order to try more accurate searches.
+          Paperclip::FaceCrop.classifiers = {
+            :face => [
+              "/usr/local/share/opencv/haarcascades/haarcascade_frontalface_alt.xml",
+              "/usr/local/share/opencv/haarcascades/haarcascade_frontalface_alt_tree.xml",
+              "/usr/local/share/opencv/haarcascades/haarcascade_profileface.xml"
+            ]
+          }
+
+    In order to try to avoid some false positives, you can also specify other classifiers to detect other parts of the face. In that case, 
+    only the found areas that contain parts like a mouth, an eye or a nose will be considered a face:
+    
+          Paperclip::FaceCrop.classifiers = {
+            :face => [
+              "/usr/local/share/opencv/haarcascades/haarcascade_frontalface_alt.xml",
+              "/usr/local/share/opencv/haarcascades/haarcascade_frontalface_alt_tree.xml",
+              "/usr/local/share/opencv/haarcascades/haarcascade_profileface.xml"
+            ],
+            :parts => [
+              "/usr/local/share/opencv/haarcascades/haarcascade_mcs_nose.xml",
+              "/usr/local/share/opencv/haarcascades/haarcascade_mcs_lefteye.xml",
+              "/usr/local/share/opencv/haarcascades/haarcascade_mcs_righteye.xml"
+            ]
+          }
+    
+    
 
 Usage:
 ------
@@ -39,6 +67,13 @@ Just specify your image styles as usual and set :face_crop as the processor:
     end
     
 In case no faces were found, it will behave simply as the `Paperclip::Thumbnail` processor
+
+
+You can also set the debug mode to draw on the image the detected regions:
+    
+    Paperclip::FaceCrop.debug = (Rails.env == 'development')
+    
+![](https://github.com/dagi3d/paperclip-facecrop/raw/master/README_example_b.jpg)
 
 Credits:
 --------
