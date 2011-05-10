@@ -1,9 +1,9 @@
 # encoding: utf-8
 $:.push File.expand_path("../lib", __FILE__)
-require 'version'
+
 Gem::Specification.new do |s|
   s.name = "paperclip-facecrop"
-  s.version = Paperclip::FaceCrop::VERSION
+  s.version = "0.0.3"
   s.authors = ["Borja Martín"]
   s.description = %q{Paperclip processor that is aware of the faces detected on the image so that they don't get cropped or aren't shown too small while generating the thumbnails}
   s.summary = %q{Paperclip processor that is aware of the faces found on the image}
@@ -13,5 +13,5 @@ Gem::Specification.new do |s|
   s.files = `git ls-files`.split("\n")
   s.has_rdoc = false
   s.add_runtime_dependency("paperclip")
-  s.add_runtime_dependency("opencv", "~> 0.0.6")
+  s.add_runtime_dependency("opencv", "= 0.0.6")
 end
