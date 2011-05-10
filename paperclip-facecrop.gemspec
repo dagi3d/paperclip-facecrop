@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name = "paperclip-facecrop"
-  s.version = "0.0.3"
+  s.version = "0.0.4"
   s.authors = ["Borja Martín"]
   s.description = %q{Paperclip processor that is aware of the faces detected on the image so that they don't get cropped or aren't shown too small while generating the thumbnails}
   s.summary = %q{Paperclip processor that is aware of the faces found on the image}

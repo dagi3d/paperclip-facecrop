@@ -1,4 +1,4 @@
-require 'opencv_ext'
+require File.join(File.dirname(__FILE__), 'opencv_ext')
 
 module Paperclip
   class FaceCrop < Paperclip::Thumbnail
