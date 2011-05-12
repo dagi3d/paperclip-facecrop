@@ -26,7 +26,8 @@ module Paperclip
       
         faces_regions.reject! do |face_region|
           region = faces_parts_regions.detect do |part_region|
-            face_region.collide?(part_region)
+            # part of a face can't be bigger than the face itself
+            face_region.collide?(part_region) && face_region > part_region
           end
         
           region.nil?

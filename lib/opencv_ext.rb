@@ -11,6 +11,19 @@ class OpenCV::CvAvgComp
     return false
   end
   
+  def >(comp)
+    self.area > comp.area
+  end
+  
+  def <(comp)
+    self.area < comp.area
+  end
+  
+  
+  def area
+    return self.width * self.height
+  end
+  
   def to_s
     "#{self.x},#{self.y}-#{self.width}x#{self.height}"
   end
