@@ -13,6 +13,6 @@ Gem::Specification.new do |s|
   s.files = `git ls-files`.split("\n")
   s.has_rdoc = false
   s.add_runtime_dependency("paperclip")
-  s.add_runtime_dependency("rest-client")
+  #s.add_runtime_dependency("rest-client")
   #s.add_runtime_dependency("opencv", "= 0.0.6")
 end

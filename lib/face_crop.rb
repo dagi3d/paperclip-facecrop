@@ -1,7 +1,5 @@
-require 'ostruct'
 module FaceCrop
-  
-  
+    
   # Detector
   #
   module Detector
@@ -17,11 +15,12 @@ module FaceCrop
       
       # detect
       #
-      def detect(image)
-        
+      def detect(file)      
       end
     end
     
+    # Region
+    #
     class Region
       attr_accessor :center
       attr_accessor :width
@@ -45,6 +44,8 @@ module FaceCrop
       end
     end
     
+    # Point
+    #
     class Point
       attr_accessor :x
       attr_accessor :y

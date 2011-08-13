@@ -34,35 +34,7 @@ module Paperclip
         faces_regions += detector.detect(file.path)
       end
       
-          
-      
-      faces_regions.flatten!
-=begin
-      raise "No classifiers were defined" if self.classifiers.nil?
-    
-      image = OpenCV::IplImage.load(file.path, 1)
-    
-      faces_regions = detect_regions(image, self.classifiers[:face])
-    
-      #Paperclip::FaceCrop.classifiers[:nose]
-      unless self.classifiers[:parts].nil?
-        faces_parts_regions = detect_regions(image, self.classifiers[:parts], OpenCV::CvColor::Red)
-      
-        faces_regions.reject! do |face_region|
-          region = faces_parts_regions.detect do |part_region|
-            # part of a face can't be bigger than the face itself
-            face_region.collide?(part_region) && face_region > part_region
-          end
-        
-          region.nil?
-        end
-      end
-=end    
-      x_coords = []
-      y_coords = []
-      widths   = []
-      heights  = []
-    
+      x_coords, y_coords, widths, heights = [], [], [], []
     
       faces_regions.each do |region|
         x_coords << region.top_left.x << region.bottom_right.x
@@ -97,7 +69,7 @@ module Paperclip
         #puts ":::#{@top_left_x}---#{average_face_width}"
         #return
         
-        @top_left_y -= average_face_height / 0.5
+        @top_left_y -= average_face_height / 1.2
         @bottom_right_y += average_face_height / 1.6
 
         calculate_bounds
@@ -155,25 +127,5 @@ module Paperclip
       @faces_height = @bottom_right_y - @top_left_y
     end
   
-    # detect_regions
-    #
-    def detect_regions(image, classifiers, color = OpenCV::CvColor::Blue)
-      regions = []
-    
-      classifiers.each do |classifier|
-        detector = OpenCV::CvHaarClassifierCascade::load(classifier)
-        detector.detect_objects(image) do |region| 
-          regions << region 
-          image.rectangle!(region.top_left, region.bottom_right, :color => color) if self.debug 
-        end
-      end
-    
-      if self.debug 
-        image.save_image(@file.path)
-        Rails.logger.info(regions)
-      end
-    
-      regions
-    end
   end
 end
