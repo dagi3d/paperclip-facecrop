@@ -1,19 +1,43 @@
-require File.join(File.dirname(__FILE__), 'opencv_ext')
+#require File.join(File.dirname(__FILE__), 'opencv_ext')
+
+require File.expand_path('../face_crop', __FILE__)
+require File.expand_path('../detectors/face_com', __FILE__)
+require File.expand_path('../detectors/opencv', __FILE__)
+#autoload :"Paperclip::FaceCrop::Detector::FaceCom", File.expand_path('../detectors/face_com', __FILE__)
 
 module Paperclip
   class FaceCrop < Paperclip::Thumbnail
 
     @@debug = false
   
-    cattr_accessor :classifiers
+    #cattr_accessor :classifiers
     cattr_accessor :debug
+    module Detector
+    end
+    
+    def self.detectors=(detectors)
+      @@detectors = detectors.map do |name, options|
+        #require File.expand_path("../detectors/#{name}", __FILE__)
+        detector_class = "FaceCrop::Detector::#{name}".constantize
+        detector = detector_class.new(options)
+      end
+    end
   
     def initialize(file, options = {}, attachment = nil)
       super(file, options, attachment)
     
+      raise "No detectors were defined" if @@detectors.nil?
       faces_regions = []
       faces_parts_regions = []
-        
+      
+      @@detectors.each do |detector|
+        faces_regions += detector.detect(file.path)
+      end
+      
+          
+      
+      faces_regions.flatten!
+=begin
       raise "No classifiers were defined" if self.classifiers.nil?
     
       image = OpenCV::IplImage.load(file.path, 1)
@@ -33,11 +57,12 @@ module Paperclip
           region.nil?
         end
       end
-    
+=end    
       x_coords = []
       y_coords = []
       widths   = []
       heights  = []
+    
     
       faces_regions.each do |region|
         x_coords << region.top_left.x << region.bottom_right.x
@@ -45,7 +70,7 @@ module Paperclip
         widths << region.width
         heights << region.height
       end
-    
+          
       @has_faces = faces_regions.size > 0
      
       if @has_faces
@@ -53,7 +78,10 @@ module Paperclip
         @top_left_y = y_coords.min
         @bottom_right_x = x_coords.max
         @bottom_right_y = y_coords.max
-      
+        
+        
+        #puts @top_left_x.to_s
+        
         # average faces areas
         average_face_width  = widths.sum / widths.size
         average_face_height = heights.sum / heights.size
@@ -62,11 +90,14 @@ module Paperclip
         #
       
         # new width
-        @top_left_x -= average_face_width / 2
-        @bottom_right_x += average_face_width / 2
+        @top_left_x -= average_face_width / 1.2
+        @bottom_right_x += average_face_width / 1.2
       
         # new height
-        @top_left_y -= average_face_height / 2
+        #puts ":::#{@top_left_x}---#{average_face_width}"
+        #return
+        
+        @top_left_y -= average_face_height / 0.5
         @bottom_right_y += average_face_height / 1.6
 
         calculate_bounds
@@ -93,7 +124,6 @@ module Paperclip
       
         @current_geometry = Paperclip::Geometry.new(@faces_width, @faces_height)
       end
-    
     end
   
   
