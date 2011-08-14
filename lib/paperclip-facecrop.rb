@@ -12,6 +12,7 @@ module Paperclip
   
     #cattr_accessor :classifiers
     cattr_accessor :debug
+    
     module Detector
     end
     
@@ -27,11 +28,16 @@ module Paperclip
       super(file, options, attachment)
     
       raise "No detectors were defined" if @@detectors.nil?
+      
       faces_regions = []
       faces_parts_regions = []
       
       @@detectors.each do |detector|
-        faces_regions += detector.detect(file.path)
+        begin
+          faces_regions += detector.detect(file.path)
+        rescue Exception => e
+          Rails.logger.error(e)
+        end
       end
       
       x_coords, y_coords, widths, heights = [], [], [], []
@@ -95,6 +101,18 @@ module Paperclip
         @faces_height = @faces_width if @target_geometry.height == 0
       
         @current_geometry = Paperclip::Geometry.new(@faces_width, @faces_height)
+        
+        if @@debug
+          parameters = []
+          parameters << "-stroke" << "green"
+          parameters << "-fill" << "none"
+          parameters << faces_regions.map {|r| "-stroke #{r.color} -draw 'rectangle #{r.top_left.x},#{r.top_left.y} #{r.bottom_right.x},#{r.bottom_right.y}'"}
+          parameters << ":source"
+          parameters << ":dest"
+          parameters = parameters.flatten.compact.join(" ").strip.squeeze(" ")
+                    
+          puts Paperclip.run("convert", parameters, :source => "#{File.expand_path(file.path)}", :dest => "#{File.expand_path(file.path)}")
+        end
       end
     end
   

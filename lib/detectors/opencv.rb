@@ -1,6 +1,8 @@
+require 'opencv'
 require File.expand_path('../opencv_ext', __FILE__)
 
 class FaceCrop::Detector::OpenCV < FaceCrop::Detector::Base
+  @color = "blue"
   
   def detect(file)
     image = OpenCV::IplImage.load(file, 1)
@@ -32,6 +34,7 @@ class FaceCrop::Detector::OpenCV < FaceCrop::Detector::Base
     classifiers.each do |classifier|
       detector = OpenCV::CvHaarClassifierCascade::load(classifier)
       detector.detect_objects(image) do |region| 
+        region.color = "red"
         regions << region 
       end
     end

@@ -1,6 +1,6 @@
 require 'rest_client'
 
-class FaceCrop::Detector::FaceCom < FaceCrop::Detector::Base
+class FaceCrop::Detector::FaceCom < FaceCrop::Detector::Base  
   URL = "http://api.face.com/faces/detect.json"
   
   def detect(file)
@@ -16,7 +16,9 @@ class FaceCrop::Detector::FaceCom < FaceCrop::Detector::Base
       w = (photo['width'] * (tag['width'] / 100)).to_i  
       h = (photo['height'] * (tag['height'] / 100)).to_i
       
-      FaceCrop::Detector::Region.new(x, y, w, h)
+      region = FaceCrop::Detector::Region.new(x, y, w, h)
+      region.color = "green"
+      region
     end
   end
 end

@@ -16,7 +16,7 @@ module FaceCrop
       # detect
       #
       def detect(file)      
-      end
+      end      
     end
     
     # Region
@@ -24,7 +24,8 @@ module FaceCrop
     class Region
       attr_accessor :center
       attr_accessor :width
-      attr_accessor :height        
+      attr_accessor :height      
+      attr_accessor :color  
       
       def initialize(x, y, width, height)
         @width, @height = width, height
