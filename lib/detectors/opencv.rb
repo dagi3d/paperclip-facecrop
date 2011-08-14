@@ -4,7 +4,8 @@ require File.expand_path('../opencv_ext', __FILE__)
 class FaceCrop::Detector::OpenCV < FaceCrop::Detector::Base
   @color = "blue"
   
-  def detect(file)
+  def detect_faces(file)
+    
     image = OpenCV::IplImage.load(file, 1)
 
     faces_regions = detect_regions(image, @options[:classifiers][:face])

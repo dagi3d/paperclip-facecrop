@@ -3,7 +3,7 @@ require 'rest_client'
 class FaceCrop::Detector::FaceCom < FaceCrop::Detector::Base  
   URL = "http://api.face.com/faces/detect.json"
   
-  def detect(file)
+  def detect_faces(file)
     url = "#{URL}?api_key=#{@options[:api_key]}&api_secret=#{@options[:api_secret]}"
     response = RestClient.post url, :file => File.new(file)
     response = JSON.parse(response)

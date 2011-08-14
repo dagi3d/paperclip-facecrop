@@ -4,9 +4,13 @@ module FaceCrop
   #
   module Detector
     
+    autoload :FaceCom, File.expand_path('../detectors/face_com', __FILE__)
+    autoload :OpenCV, File.expand_path('../detectors/opencv', __FILE__)
+    
     # Base
     #
     class Base
+      
       # initialize
       #
       def initialize(options)
@@ -15,8 +19,32 @@ module FaceCrop
       
       # detect
       #
-      def detect(file)      
-      end      
+      def detect(file)
+        key = "#{self.class}#{file}"
+        puts key
+        regions = FaceCrop::Detector::Cache[key] || detect_faces(file)
+        FaceCrop::Detector::Cache[key] = regions
+        
+        puts FaceCrop::Detector::Cache[key]
+        regions
+      end
+      
+    end
+    
+    class Cache
+      @@cache = {}
+      
+      def self.[]=(key, faces)
+        @@cache[key] = faces
+      end
+      
+      def self.[](key)
+        @@cache[key]
+      end
+      
+      def self.clear
+        @@cache = {}
+      end
     end
     
     # Region
