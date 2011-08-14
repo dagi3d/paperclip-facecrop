@@ -7,11 +7,11 @@ class FaceCrop::Detector::OpenCV < FaceCrop::Detector::Base
     
     image = OpenCV::IplImage.load(file, 1)
 
-    faces_regions = detect_regions(image, @options[:classifiers][:face])
+    faces_regions = detect_regions(image, @options[:face])
   
     #Paperclip::FaceCrop.classifiers[:nose]
-    unless @options[:classifiers][:parts].nil?
-      faces_parts_regions = detect_regions(image, @options[:classifiers][:parts])
+    unless @options[:parts].nil?
+      faces_parts_regions = detect_regions(image, @options[:parts])
     
       faces_regions.reject! do |face_region|
         region = faces_parts_regions.detect do |part_region|
