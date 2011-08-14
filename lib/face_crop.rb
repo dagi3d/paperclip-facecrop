@@ -21,11 +21,11 @@ module FaceCrop
       #
       def detect(file)
         key = "#{self.class}#{file}"
-        puts key
-        regions = FaceCrop::Detector::Cache[key] || detect_faces(file)
-        FaceCrop::Detector::Cache[key] = regions
-        
-        puts FaceCrop::Detector::Cache[key]
+        regions = FaceCrop::Detector::Cache[key] 
+        return regions unless regions.nil?
+
+        regions = detect_faces(file)
+        FaceCrop::Detector::Cache[key] = regions        
         regions
       end
       

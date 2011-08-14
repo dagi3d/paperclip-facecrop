@@ -2,7 +2,6 @@ require 'opencv'
 require File.expand_path('../opencv_ext', __FILE__)
 
 class FaceCrop::Detector::OpenCV < FaceCrop::Detector::Base
-  @color = "blue"
   
   def detect_faces(file)
     
