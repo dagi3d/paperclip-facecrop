@@ -23,7 +23,7 @@ checkout the OpenCV_2.2 branch or just remove the line 143 from `/ext/opencv/cve
 ### Face.com
 - [rest-client][rest-client]
 
-In order to use the Face.com service, you will also need to register in order to get your aapi key and api secret for your application.
+In order to use the Face.com service, you will also need to register in order to get your api key and api secret for your application.
 
 
 Installation:
