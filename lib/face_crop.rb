@@ -20,7 +20,9 @@ module FaceCrop
       # detect
       #
       def detect(file)
-        key = "#{self.class}#{file}"
+        puts file
+        key = "#{self.class}:" + Digest::MD5.hexdigest(File.read(file))
+        
         regions = FaceCrop::Detector::Cache[key] 
         return regions unless regions.nil?
 

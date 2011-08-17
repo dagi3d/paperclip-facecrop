@@ -3,7 +3,7 @@ module FaceCrop
     initializer "paperclip-facecrop.extend_has_attachment" do
       raise "Paperclip needed" unless defined?(Paperclip)
       ActiveSupport.on_load :active_record do
-        
+           
         class ActiveRecord::Base
           
           class << self
@@ -14,7 +14,7 @@ module FaceCrop
             
             alias_method_chain :has_attached_file, :face_crop_cache
           end
-        end
+        end        
       end
       
     end

@@ -4,11 +4,15 @@ class FaceCrop::Detector::FaceCom < FaceCrop::Detector::Base
   URL = "http://api.face.com/faces/detect.json"
   
   def detect_faces(file)
+    puts "face.com"
     query = @options.to_query
     url = "#{URL}?#{query}"
     
+    
     response = RestClient.post url, :file => File.new(file)
     response = JSON.parse(response)
+    
+    
     
     photo = response['photos'].first
     photo['tags'].map do |tag|
