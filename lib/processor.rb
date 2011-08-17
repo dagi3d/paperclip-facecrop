@@ -84,7 +84,6 @@ module Paperclip
         # if the new area is smaller than the target geometry, it's scaled so the final image isn't resampled
         #
         if @faces_width < @target_geometry.width 
-          raise "W"
           delta_width = (@target_geometry.width - @faces_width) / 2
           @top_left_x -= delta_width
           @bottom_right_x += delta_width
