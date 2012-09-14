@@ -5,6 +5,7 @@ module FaceCrop
   module Detector
     
     autoload :FaceCom, File.expand_path('../detectors/face_com', __FILE__)
+    autoload :LambdaLabs, File.expand_path('../detectors/lambda_labs', __FILE__)
     autoload :OpenCV, File.expand_path('../detectors/opencv', __FILE__)
     
     # Base
