@@ -1,8 +1,9 @@
-require File.expand_path('../lambda_libs/FaceRecognition', __FILE__)
+
 
 class FaceCrop::Detector::LambdaLabs < FaceCrop::Detector::Base
 
   def detect_faces(file)
+    require File.expand_path('../lambda_libs/FaceRecognition', __FILE__)
     lambda_face = FaceRecognition.new(@options[:api_key], @options[:api_secret])
     response = lambda_face.detect(File.open(file)).body
 
