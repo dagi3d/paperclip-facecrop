@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c15d474-6beb-45f7-b9c1-38d200b48c1c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/detectors/lambda_labs.rb" afterPath="$PROJECT_DIR$/lib/detectors/lambda_labs.rb" />
     </list>
     <ignored path="paperclip-facecrop.iws" />
@@ -25,7 +24,7 @@
       <file leaf-file-name="lambda_labs.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/detectors/lambda_labs.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="0" selection-start="881" selection-end="881" vertical-scroll-proportion="0.6105834">
+            <state line="30" column="0" selection-start="815" selection-end="815" vertical-scroll-proportion="0.6">
               <folding />
             </state>
           </provider>
@@ -448,7 +447,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/detectors/lambda_labs.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="881" selection-end="881" vertical-scroll-proportion="0.6105834">
+        <state line="30" column="0" selection-start="815" selection-end="815" vertical-scroll-proportion="0.6">
           <folding />
         </state>
       </provider>

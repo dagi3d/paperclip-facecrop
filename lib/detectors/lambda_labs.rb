@@ -7,7 +7,7 @@ class FaceCrop::Detector::LambdaLabs < FaceCrop::Detector::Base
 
     response = RestClient.post(URL, File.new(file),
                                {:content_type => 'json',
-                                "X-Mashape-Authorization" => "azJmc3Bmc2l4OWNjcGtnZ3NibGVheDRlbzlrYm92OjAyYWM2NmU1NTBhMWYwYzUyNmY1NzFlYWRhMTc2M2RjODJmN2I1Mzk=" })
+                                "X-Mashape-Authorization" => @options[:mashape_authorization] })
 
     response = JSON.parse(response)
 
