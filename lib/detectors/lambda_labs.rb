@@ -1,6 +1,6 @@
 require 'rest_client'
 
-class FaceCrop::Detector::Lambda_Labs < FaceCrop::Detector::Base
+class FaceCrop::Detector::LambdaLabs < FaceCrop::Detector::Base
 
   def detect_faces(file)
 
