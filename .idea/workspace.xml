@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c15d474-6beb-45f7-b9c1-38d200b48c1c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/detectors/lambda_labs.rb" afterPath="$PROJECT_DIR$/lib/detectors/lambda_labs.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="paperclip-facecrop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -21,10 +21,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="lambda_labs.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="lambda_labs.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/detectors/lambda_labs.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="685" selection-end="685" vertical-scroll-proportion="0.5">
+            <state line="2" column="36" selection-start="103" selection-end="113" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="face_crop.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/face_crop.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="25" selection-start="293" selection-end="293" vertical-scroll-proportion="0.18">
               <folding />
             </state>
           </provider>
@@ -44,8 +53,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/lib/detectors/lambda.rb" />
-        <option value="$PROJECT_DIR$/lib/face_crop.rb" />
         <option value="$PROJECT_DIR$/lib/detectors/lambda_labs.rb" />
+        <option value="$PROJECT_DIR$/lib/face_crop.rb" />
       </list>
     </option>
   </component>
@@ -341,7 +350,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -408,13 +417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/face_crop.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="8" selection-start="398" selection-end="406" vertical-scroll-proportion="0.34">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -438,7 +440,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/detectors/lambda_labs.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="685" selection-end="685" vertical-scroll-proportion="0.5">
+        <state line="2" column="36" selection-start="103" selection-end="113" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/face_crop.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="25" selection-start="293" selection-end="293" vertical-scroll-proportion="0.18">
           <folding />
         </state>
       </provider>
