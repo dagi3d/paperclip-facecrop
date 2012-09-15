@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c15d474-6beb-45f7-b9c1-38d200b48c1c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/detectors/lambda_labs.rb" afterPath="$PROJECT_DIR$/lib/detectors/lambda_labs.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/detectors/lambda_libs/FaceRecognition.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/detectors/lambda_libs/mashape/authentication/authentication.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/detectors/lambda_libs/mashape/authentication/authentication_utils.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/detectors/lambda_libs/mashape/authentication/basic_authentication.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/detectors/lambda_libs/mashape/authentication/custom_header_authentication.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/detectors/lambda_libs/mashape/authentication/header_authentication.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/detectors/lambda_libs/mashape/authentication/mashape_authentication.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/detectors/lambda_libs/mashape/authentication/oauth10a_authentication.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/detectors/lambda_libs/mashape/authentication/oauth2_authentication.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/detectors/lambda_libs/mashape/authentication/oauth_authentication.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/detectors/lambda_libs/mashape/authentication/query_authentication.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/detectors/lambda_libs/mashape/http_client.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/detectors/lambda_libs/mashape/http_utils.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/detectors/lambda_libs/mashape/mashape.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/detectors/lambda_libs/mashape/mashape_exception.rb" afterPath="" />
     </list>
     <ignored path="paperclip-facecrop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -140,28 +154,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paperclip-facecrop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paperclip-facecrop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detectors" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lambda_libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -294,13 +286,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964131" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964131" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -368,27 +360,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/detectors/lambda_libs/mashape/authentication/authentication.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/detectors/lambda_libs/mashape/http_client.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="19" selection-start="1201" selection-end="1201" vertical-scroll-proportion="0.18995929">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/detectors/lambda_libs/FaceRecognition.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="36" selection-start="676" selection-end="676" vertical-scroll-proportion="0.41383988">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/paperclip-facecrop.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
