@@ -1,11 +1,15 @@
-
+require 'rest_client'
 
 class FaceCrop::Detector::LambdaLabs < FaceCrop::Detector::Base
+  URL = "https://lambda-face-detection-and-recognition.p.mashape.com/detect"
 
   def detect_faces(file)
-    require File.expand_path('../lambda_libs/FaceRecognition', __FILE__)
-    lambda_face = FaceRecognition.new(@options[:api_key], @options[:api_secret])
-    response = lambda_face.detect(File.open(file)).body
+
+    response = RestClient.post(URL, File.new(file),
+                               {:content_type => 'json',
+                                "X-Mashape-Authorization" => "azJmc3Bmc2l4OWNjcGtnZ3NibGVheDRlbzlrYm92OjAyYWM2NmU1NTBhMWYwYzUyNmY1NzFlYWRhMTc2M2RjODJmN2I1Mzk=" })
+
+    response = JSON.parse(response)
 
     puts response
 
