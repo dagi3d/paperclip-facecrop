@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c15d474-6beb-45f7-b9c1-38d200b48c1c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/detectors/lambda_labs.rb" afterPath="$PROJECT_DIR$/lib/detectors/lambda_labs.rb" />
     </list>
     <ignored path="paperclip-facecrop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -21,19 +21,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="lambda_labs.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="lambda_labs.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/detectors/lambda_labs.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="36" selection-start="103" selection-end="113" vertical-scroll-proportion="0.0">
+            <state line="0" column="68" selection-start="68" selection-end="68" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="face_crop.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="face_crop.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/face_crop.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="25" selection-start="293" selection-end="293" vertical-scroll-proportion="0.18">
+            <state line="7" column="44" selection-start="180" selection-end="183" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -53,8 +53,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/lib/detectors/lambda.rb" />
-        <option value="$PROJECT_DIR$/lib/detectors/lambda_labs.rb" />
         <option value="$PROJECT_DIR$/lib/face_crop.rb" />
+        <option value="$PROJECT_DIR$/lib/detectors/lambda_labs.rb" />
       </list>
     </option>
   </component>
@@ -438,16 +438,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/detectors/lambda_labs.rb">
+    <entry file="file://$PROJECT_DIR$/lib/face_crop.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="36" selection-start="103" selection-end="113" vertical-scroll-proportion="0.0">
+        <state line="7" column="44" selection-start="180" selection-end="183" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/face_crop.rb">
+    <entry file="file://$PROJECT_DIR$/lib/detectors/lambda_labs.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="25" selection-start="293" selection-end="293" vertical-scroll-proportion="0.18">
+        <state line="0" column="68" selection-start="68" selection-end="68" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

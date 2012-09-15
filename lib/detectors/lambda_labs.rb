@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), "lambda_libs/FaceRecognition.rb")
+require File.expand_path('../lambda_libs/FaceRecognition', __FILE__)
 
 class FaceCrop::Detector::LambdaLabs < FaceCrop::Detector::Base
 
