@@ -2,7 +2,7 @@ Paperclip::FaceCrop
 ====================
 `Paperclip::FaceCrop` is a [Paperclip][paperclip] processor that is aware of the faces found on the image 
 so that they aren't cropped or aren't shown too small while generating the thumbnails.
-It can use the [OpenCV][opencv] library or the [Face.com][face_com] web service(or both at the same time) for the facial recognition.
+It can use the [OpenCV][opencv] library, the [Face.com][face_com] or [LambdaLabs][lambda_labs] web service(or all three at the same time) for the facial recognition.
 
 ![](https://github.com/dagi3d/paperclip-facecrop/raw/master/README_example.jpg)
 
@@ -24,6 +24,12 @@ checkout the OpenCV_2.2 branch or just remove the line 143 from `/ext/opencv/cve
 - [rest-client][rest-client]
 
 In order to use the Face.com service, you will also need to register in order to get your api key and api secret for your application.
+
+### lambdal.com
+- [rest-client][rest-client]
+
+In order to use the lambdal.com service, you will also need to register in order to get your api key for your application.
+
 
 
 Installation:
@@ -85,6 +91,13 @@ only the found areas that contain parts like a mouth, an eye or a nose will be c
             'FaceCom' => { :api_key => "<YOUR API KEY>", :api_secret => "<YOUR API SECRET>"}
           }    
 
+### lambdal.com
+
+          Paperclip::FaceCrop.detectors = {
+            'LambdaLabs' => {:mashape_authorization => "<YOUR API KEY>"}
+          }  
+
+
 
 Usage:
 ------
@@ -114,6 +127,7 @@ Copyright (c) 2011 Borja Martín Sánchez de Vivar <borjamREMOVETHIS@dagi3d.net>
 The photo used as example belongs to [Jesper Rønn-Jensen](http://www.flickr.com/photos/jesper/)
 
 [face_com]: http://face.com
+[lambda_labs]: http://lambdal.com
 [rest-client]: https://rubygems.org/gems/rest-client
 [paperclip]: https://github.com/thoughtbot/paperclip
 [opencv]: http://opencv.willowgarage.com/
