@@ -1,13 +1,12 @@
 require 'rest_client'
 
 class FaceCrop::Detector::LambdaLabs < FaceCrop::Detector::Base
-  URL = "https://lambda-face-detection-and-recognition.p.mashape.com/detect"
+  URL = "https://lambda-face-recognition.p.mashape.com/detect"
 
   def detect_faces(file)
-
-    response = RestClient.post(URL, File.new(file),
-                               {:content_type => 'json',
-                                "X-Mashape-Authorization" => @options[:mashape_authorization] })
+    response = RestClient.post(URL,
+                               {:files => File.new(file)},
+                               {:content_type => 'json', "X-Mashape-Authorization" => @options[:mashape_authorization]})
 
     response = JSON.parse(response)
 
@@ -15,7 +14,7 @@ class FaceCrop::Detector::LambdaLabs < FaceCrop::Detector::Base
 
     photo = response['photos'].first
     photo['tags'].map do |tag|
-      # values are returned as pixel values
+      # values are returned as percentual values
 
       x = tag['center']['x'].to_i
       y = tag['center']['y'].to_i
