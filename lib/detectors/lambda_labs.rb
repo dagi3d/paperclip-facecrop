@@ -10,8 +10,6 @@ class FaceCrop::Detector::LambdaLabs < FaceCrop::Detector::Base
 
     response = JSON.parse(response)
 
-    puts response
-
     photo = response['photos'].first
     photo['tags'].map do |tag|
       # values are returned as percentual values
