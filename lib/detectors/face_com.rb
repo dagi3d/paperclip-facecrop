@@ -4,7 +4,7 @@ class FaceCrop::Detector::FaceCom < FaceCrop::Detector::Base
   URL = "http://api.face.com/faces/detect.json"
   
   def detect_faces(file)
-    query = @options.to_query
+  	query = @options.to_query + "&detector=Aggressive"
     url = "#{URL}?#{query}"
     
     response = RestClient.post url, :file => File.new(file)
